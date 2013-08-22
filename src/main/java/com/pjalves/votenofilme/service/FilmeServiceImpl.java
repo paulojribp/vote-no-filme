@@ -50,7 +50,7 @@ public class FilmeServiceImpl implements FilmeService {
 	}
 
 	@Transactional(propagation=Propagation.REQUIRED)
-	public void criarFilmesPadrao() {
+	public List<Filme> criarFilmesPadrao() {
 		List<Filme> filmes = new ArrayList<Filme>();
 		if (filmeDao.find(1l) == null) {
 			filmes.add( new Filme(1l, "Matrix", "Entre no mundo da Matrix", "images/filme-matrix.jpg") );
@@ -74,5 +74,7 @@ public class FilmeServiceImpl implements FilmeService {
 			filmes.add( new Filme(5l, "Toy Story", "Brinquedos que se mexem para assustar criançinhas indefesas", "images/filme-toystory.jpg") );
 		}
 		filmeDao.create(filmes);
+		
+		return filmes;
 	}
 }

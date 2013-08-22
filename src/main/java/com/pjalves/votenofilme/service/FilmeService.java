@@ -16,6 +16,6 @@ public interface FilmeService {
 	
 	Filme find(Long id);
 
-	void criarFilmesPadrao();
+	List<Filme> criarFilmesPadrao();
 	
 }

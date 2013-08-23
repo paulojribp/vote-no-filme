@@ -1,4 +1,5 @@
-== Vote no filme
+Vote no filme
+=============
 
 Aplicativo desenvolvido como parte do processo seletivo da BlueSoft.
 

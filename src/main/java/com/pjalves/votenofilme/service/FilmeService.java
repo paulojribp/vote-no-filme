@@ -3,12 +3,11 @@ package com.pjalves.votenofilme.service;
 import java.util.List;
 
 import com.pjalves.votenofilme.entity.Filme;
+import com.pjalves.votenofilme.entity.Voto;
 
 public interface FilmeService {
 
-	void create(Filme fabricante);
-
-	void update(Filme fabricante);
+	void update(Filme filme);
 
 	void remove(Long id);
 

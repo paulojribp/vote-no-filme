@@ -10,6 +10,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.pjalves.votenofilme.dao.FilmeDao;
 import com.pjalves.votenofilme.entity.Filme;
+import com.pjalves.votenofilme.entity.Voto;
 
 @Component
 public class FilmeServiceImpl implements FilmeService {
@@ -18,11 +19,6 @@ public class FilmeServiceImpl implements FilmeService {
 	private FilmeDao filmeDao;
 	
 	public FilmeServiceImpl() {
-	}
-
-	@Override
-	public void create(Filme filme) {
-		filmeDao.create(filme);
 	}
 
 	@Override

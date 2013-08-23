@@ -1,5 +1,7 @@
 package com.pjalves.votenofilme.entity;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -7,6 +9,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.SequenceGenerator;
 
+@Entity
 public class Voto {
 
 	@Id
@@ -18,8 +21,11 @@ public class Voto {
 	
 	private String email;
 	
+	@Column(nullable=false)
+	private Integer quantidade;
+	
 	@ManyToOne
-	@JoinColumn(name = "filmeid")
+	@JoinColumn(name = "filmeid", nullable=false)
 	private Filme filme;
 
 	public Long getId() {
@@ -52,6 +58,14 @@ public class Voto {
 
 	public void setFilme(Filme filme) {
 		this.filme = filme;
+	}
+
+	public Integer getQuantidade() {
+		return quantidade;
+	}
+
+	public void setQuantidade(Integer quantidade) {
+		this.quantidade = quantidade;
 	}
 	
 }

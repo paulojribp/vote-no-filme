@@ -10,7 +10,6 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.pjalves.votenofilme.dao.FilmeDao;
 import com.pjalves.votenofilme.entity.Filme;
-import com.pjalves.votenofilme.entity.Voto;
 
 @Component
 public class FilmeServiceImpl implements FilmeService {
@@ -22,29 +21,13 @@ public class FilmeServiceImpl implements FilmeService {
 	}
 
 	@Override
-	public void update(Filme filme) {
-		Filme f2 = find(filme.getId());
-		f2.setNome(filme.getNome());
-		f2.setDescricao(filme.getDescricao());
-		f2.setPath(filme.getPath());
-		filmeDao.update(f2);
-	}
-
-	@Override
-	public void remove(Long id) {
-		filmeDao.remove(id);
-	}
-
-	@Override
 	public List<Filme> findAll() {
 		return filmeDao.findAll();
 	}
 
-	@Override
-	public Filme find(Long id) {
-		return filmeDao.find(id);
-	}
-
+	/**
+	 * @see com.pjalves.votenofilme.service.FilmeService#criarFilmesPadrao()
+	 */
 	@Transactional(propagation=Propagation.REQUIRED)
 	public List<Filme> criarFilmesPadrao() {
 		List<Filme> filmes = new ArrayList<Filme>();

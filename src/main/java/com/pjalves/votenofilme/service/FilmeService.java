@@ -3,18 +3,21 @@ package com.pjalves.votenofilme.service;
 import java.util.List;
 
 import com.pjalves.votenofilme.entity.Filme;
-import com.pjalves.votenofilme.entity.Voto;
 
 public interface FilmeService {
 
-	void update(Filme filme);
-
-	void remove(Long id);
-
+	/**
+	 * Retorna todos os filmes cadastrados
+	 * 
+	 * @return Lista de Filmes
+	 */
 	List<Filme> findAll();
 	
-	Filme find(Long id);
-
+	/**
+	 * Cria os filmes ao subir a aplicação caso ainda não existam na base
+	 * 
+	 * @return List de Filmes criados
+	 */
 	List<Filme> criarFilmesPadrao();
 	
 }

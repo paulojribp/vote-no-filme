@@ -40,26 +40,6 @@ public class FilmeController {
 		result.use(Results.json()).from("success").serialize();
 	}
 	
-	@Post("/update")
-	public void update(Filme filme) {
-		try {
-			filmeService.update(filme);
-			result.use(Results.json()).from("success").serialize();
-		} catch (Exception e) {
-			result.use(Results.json()).from(e).serialize();
-		}
-	}
-	
-	@Post("/remove")
-	public void remove(Long id) {
-		try {
-			filmeService.remove(id);
-			result.use(Results.json()).from("success").serialize();
-		} catch (Exception e) {
-			result.use(Results.json()).from(e).serialize();
-		}
-	}
-	
 	@Get("/list")
 	public void list() {
 		List<Filme> filmes = filmeService.findAll();
